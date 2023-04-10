@@ -7,15 +7,15 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
 @Setter
-public class CreateMaintenanceResponse {
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CreateRentalResponse {
     private int id;
     private int carId;
-    private String information;
-    private boolean isCompleted;
+    private double dailyPrice;
+    private int rentedForDays;
+    private double totalPrice;
     private LocalDateTime startDate;
-    private LocalDateTime endDate;
 }

@@ -5,17 +5,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GetAllCarsResponse {
+public class GetAllRentalsResponse {
     private int id;
-    private int modelId;
-    private int modelYear;
-    private String plate;
-    private int state;
+    private int carId;
     private double dailyPrice;
-    private String modelName;
-    private String modelBrandName;
+    private int rentedForDays;
+    private double totalPrice;
+    private LocalDateTime startDate;
 }

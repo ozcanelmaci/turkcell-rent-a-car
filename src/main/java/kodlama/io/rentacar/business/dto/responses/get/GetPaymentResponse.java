@@ -9,13 +9,12 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GetAllCarsResponse {
+public class GetPaymentResponse {
     private int id;
-    private int modelId;
-    private int modelYear;
-    private String plate;
-    private int state;
-    private double dailyPrice;
-    private String modelName;
-    private String modelBrandName;
+    private String cardNumber;
+    private String cardHolder;
+    private int cardExpirationYear;
+    private int cardExpirationMonth;
+    private String cardCvv;
+    private double balance;
 }
