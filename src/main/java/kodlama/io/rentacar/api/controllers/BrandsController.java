@@ -1,12 +1,13 @@
 package kodlama.io.rentacar.api.controllers;
 
+import jakarta.validation.Valid;
 import kodlama.io.rentacar.business.abstracts.BrandService;
-import kodlama.io.rentacar.business.dto.requests.update.UpdateBrandRequest;
 import kodlama.io.rentacar.business.dto.requests.create.CreateBrandRequest;
-import kodlama.io.rentacar.business.dto.responses.update.UpdateBrandResponse;
+import kodlama.io.rentacar.business.dto.requests.update.UpdateBrandRequest;
 import kodlama.io.rentacar.business.dto.responses.create.CreateBrandResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetAllBrandsResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetBrandResponse;
+import kodlama.io.rentacar.business.dto.responses.update.UpdateBrandResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class BrandsController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CreateBrandResponse add(@RequestBody CreateBrandRequest request) {
+    public CreateBrandResponse add(@Valid @RequestBody CreateBrandRequest request) {
         return service.add(request);
     }
 

@@ -7,10 +7,10 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
 @Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UpdateMaintenanceRequest {
     private int carId;
     private String information;

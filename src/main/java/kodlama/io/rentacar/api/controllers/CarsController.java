@@ -1,5 +1,6 @@
 package kodlama.io.rentacar.api.controllers;
 
+import jakarta.validation.Valid;
 import kodlama.io.rentacar.business.abstracts.CarService;
 import kodlama.io.rentacar.business.dto.requests.create.CreateCarRequest;
 import kodlama.io.rentacar.business.dto.requests.update.UpdateCarRequest;
@@ -14,10 +15,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cars")
 @AllArgsConstructor
+@RequestMapping("/api/cars")
 public class CarsController {
     private final CarService service;
+
     @GetMapping
     public List<GetAllCarsResponse> getAll(@RequestParam(defaultValue = "true") boolean includeMaintenance) {
         return service.getAll(includeMaintenance);
@@ -30,7 +32,7 @@ public class CarsController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CreateCarResponse add(@RequestBody CreateCarRequest request) {
+    public CreateCarResponse add(@Valid @RequestBody CreateCarRequest request) {
         return service.add(request);
     }
 

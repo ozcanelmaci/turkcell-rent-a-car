@@ -1,6 +1,5 @@
 package kodlama.io.rentacar.business.abstracts;
 
-
 import kodlama.io.rentacar.business.dto.requests.create.CreateMaintenanceRequest;
 import kodlama.io.rentacar.business.dto.requests.update.UpdateMaintenanceRequest;
 import kodlama.io.rentacar.business.dto.responses.create.CreateMaintenanceResponse;
@@ -11,7 +10,6 @@ import kodlama.io.rentacar.business.dto.responses.update.UpdateMaintenanceRespon
 import java.util.List;
 
 public interface MaintenanceService {
-    // CRUD operations
     List<GetAllMaintenancesResponse> getAll();
     GetMaintenanceResponse getById(int id);
     GetMaintenanceResponse returnCarFromMaintenance(int carId);

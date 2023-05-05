@@ -21,7 +21,8 @@ public class Car {
     private int id;
     private int modelYear;
     private String plate;
-    private State state; // 1 - Available, 2 - Rented, 3 - Maintance
+    @Enumerated(EnumType.STRING)
+    private State state;
     private double dailyPrice;
 
     @ManyToOne
@@ -30,4 +31,7 @@ public class Car {
 
     @OneToMany(mappedBy = "car")
     private List<Maintenance> maintenances;
+
+    @OneToMany(mappedBy = "car")
+    private List<Rental> rentals;
 }
